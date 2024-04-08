@@ -5,7 +5,6 @@ import prisma from '../../../prisma/client';
 const createUserSchema = z.object({
     name: z.string().min(1).max(255),
     email: z.string().min(1).max(255),
-    image: z.string().min(1)
 })
 export async function POST(request:NextRequest) {
     const body =await request.json() as { name: string, email: string };
